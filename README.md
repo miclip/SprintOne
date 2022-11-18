@@ -12,6 +12,14 @@ sudo dotnet publish sprintone.sln -c release -r linux-x64 --self-contained=true 
   -p:generateruntimeconfigurationfiles=true -o /etc/sprintone
 ~~~
 
+Add httpd configuration to proxy to dotnet service `/etc/httpd/conf/httpd.conf`
+~~~ini
+<VirtualHost *:80>
+ProxyPass / http://127.0.0.1:5000/
+ProxyPassReverse / http://127.0.0.1:5000/
+</VirtualHost>
+~~~
+
 Create a systemctl configuration file `sudo vim /etc/systemd/system/sprintone.service`
 ~~~ini
 [Unit]
