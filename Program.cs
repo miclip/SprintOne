@@ -1,7 +1,11 @@
+using Amazon.CloudWatch;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDefaultAWSOptions(builder.Configuration.GetAWSOptions());
+builder.Services.AddAWSService<IAmazonCloudWatch>();
 builder.Host.UseSystemd();
 var app = builder.Build();
 
