@@ -6,7 +6,7 @@
 <form method="post" enctype="multipart/form-data" asp-controller="Home" asp-action="Metric">
     <div class="form-group">
         <label for="txtMetric">Metric</label>
-        <input type="number" class="form-control" id="txtMetric" aria-describedby="metricHelp" placeholder="Enter an integer">
+        <input type="number" class="form-control" id="txtMetric" name="metric" aria-describedby="metricHelp" placeholder="Enter an integer">
         <small id="metricHelp" class="form-text text-muted">Enter a metric </small>
     </div>
     <button class="btn btn-primary" type="submit" value="Submit">Submit</button>
